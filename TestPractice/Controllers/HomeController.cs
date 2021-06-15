@@ -55,7 +55,7 @@ namespace TestPractice.Controllers
                     desciption.cityName = result.list.Select(p => p.name).FirstOrDefault();
                     desciption.weatherDescription = result.list.Select(p => p.weather.Select(p => p.description).FirstOrDefault()).FirstOrDefault();
                     desciption.weatherMain = item.weather.Select(p => p.main).FirstOrDefault();
-                    desciption.weatherIcon = item.weather.Select(p => p.icon).FirstOrDefault();
+                    desciption.weatherIcon = string.Format("http://openweathermap.org/img/wn/{0}/@2x.png", item.weather.Select(p => p.icon).FirstOrDefault());
                     desciption.mainTemp = item.main.temp;
                     desciption.mainHumidity = item.main.humidity;
                     desciptions.Add(desciption);
